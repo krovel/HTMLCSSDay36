@@ -7,7 +7,6 @@
     <title>HTML Form</title>
     <link rel="stylesheet" href="../css/sample_form_style.css">
 </head>
-
 <body>
     <form>
         <header class="headerContainer">
@@ -85,6 +84,15 @@
             if (TELEPHONE_REGEX.test(telephone.value)) {
                 telephoneError.textContent = "";
             } else telephoneError.textContent = "Telephone is Incorrect";
+        };
+
+        const password = document.querySelector("#pwd");
+        const passwordError = document.querySelector(".pwd-error");
+        password.oninput = function() {
+            const PASSWORD_REGEX = RegExp("(.{8,})");
+            if (PASSWORD_REGEX.test(password.value)) {
+                passwordError.textContent = "";
+            } else passwordError.textContent = "Password is Incorrect";
         };
 
         const salary = document.querySelector("#salary");
